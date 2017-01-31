@@ -2,7 +2,11 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7, IE=9">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>KY Limestone Quarries</title>
+<link rel="stylesheet" href="http://js.arcgis.com/3.11/dijit/themes/tundra/tundra.css">
+<link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css">
 <style>
     
 body{
@@ -53,11 +57,59 @@ body{
         
     }    
     
-</style>    
+</style> 
+<link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/css/main.css">
+<script src="https://js.arcgis.com/4.2/"></script>
+    <script>
+    require([
+    "esri/Map",
+    "esri/views/MapView",
+    "dojo/domReady!"
+  //  "esri/layers/FeatureLayer",
+//    "esri/layers/TileLayer",
+  //  "esri/geometry/Extent"
+        
+    ], function(Map, MapView) {
+    
+        //var startExtent = new Extent(-9542705.3649355,4055951.78300879,-9458457.41311185,5037733.59234617, 102100); 
+        
+        var map = new Map({
+            basemap: 'streets'
+     });
+        
+     var view = new MapView({
+         container: "map",
+         map: map,
+         zoom: 4
+     });
+        
+ /*   // Limestone Units
+     var ls = new TileLayer({
+         url: "http://kgs.uky.edu/arcgis/rest/services/Economic/DeverLimestoneMap_UnitsOnly/MapServer"
+     }); 
+     map.add(ls);
+        
+    // Quarry Centroids    
+     var qr = new FeatureLayer({
+         url: "http://kgs.uky.edu/arcgis/rest/services/Economic/DeverLimestoneMap/MapServer/1"
+     });    
+    map.add(qr);
+        
+    //Sample Locations    
+     var sl = new FeatureLayer({
+         url: "http://kgs.uky.edu/arcgis/rest/services/Economic/DeverLimestoneMap/MapServer/0"
+     });   
+    map.add(sl); */
+        
+    }); 
+    </script>
 </head>
 <body>
     <div id="map">
-        <div id="Legend"></div>
+        <div id="Legend">
+        <p>Legend
+            </p>
+        </div>
     </div>
     <div id="InfoWin">
         <p>
